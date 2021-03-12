@@ -11,8 +11,8 @@
 
 ## Relevant Docs
 
-* presentation slides[link][1]
-* draft[link][2]
+* presentation slides [\[link\]][1]
+* draft [\[link\]][2]
   
 ---
 
