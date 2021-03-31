@@ -5,7 +5,7 @@
 | tasks              | PIC        |
 | ------------------ | ---------- |
 | Map                | Vysh, Hugo |
-| Character + Object | HomgMing   |
+| Character + Object | HongMing   |
 | Alien              | Manik      |
 | GUI                | Walter     |
 
