@@ -14,8 +14,10 @@ public class Controls : MonoBehaviour
     public float walkingSpeed = 2.0f;
     public float runningSpeed = 7.0f;
     public float acceleration = 0.2f;
-  
-    public int requiredCells = 5;
+    public int addHealth = 20;
+    public static int requiredCells = 5;
+
+
 
     private Animator anim;
     private CharacterController characterController;
@@ -60,6 +62,12 @@ public class Controls : MonoBehaviour
                 canEnterSpaceship = true;
                 spaceship = other.gameObject;
             }
+        }
+        else if (other.gameObject.tag == "Healthpack")
+        {
+            Debug.Log("HealthPack Detected!");
+            Destroy(other);
+            currentHealth += addHealth;
         }
     }
 
@@ -130,6 +138,7 @@ public class Controls : MonoBehaviour
         if (Input.GetKeyDown("e"))
         {
             Destroy(gameObject);
+            //GameTransition.finishLevel = true;
         }
     }
 
@@ -148,28 +157,17 @@ public class Controls : MonoBehaviour
         //transform.Rotate(0, rotation, 0);
 
         Vector3 newDirection = new Vector3();
-        if (Input.GetKey(KeyCode.A))
-        {
-                  newDirection.x = -1;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            newDirection.x = 1;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            newDirection.z = -1;
-        }
-        else if (Input.GetKey(KeyCode.W))
+        
+        if (Input.GetKey(KeyCode.W))
         {
             newDirection.z = 1;
         }
 
-       
+        Vector3 _ = new Vector3();
+        characterController.SimpleMove(_); // this part is needed because simpleMove adds gravity to character.
 
-        
         //controls animation
-        if (newDirection.x != 0 || newDirection.z != 0)
+        if (newDirection.z != 0)
         {
             direction = newDirection;
             transform.rotation = Quaternion.LookRotation(direction);
@@ -187,8 +185,10 @@ public class Controls : MonoBehaviour
                 anim.SetBool("isRunning", false);
                 currentSpeed = walkingSpeed;
             }
+
+
+            transform.position += transform.TransformDirection(newDirection * Time.deltaTime * currentSpeed);
             
-            characterController.SimpleMove(direction * currentSpeed);
         }
 
         else
