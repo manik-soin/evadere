@@ -156,21 +156,25 @@ public class Controls : MonoBehaviour
         //rotation *= Time.deltaTime;
         //transform.Rotate(0, rotation, 0);
 
-        Vector3 newDirection = new Vector3();
+       
+
+        float hor = 0;
+        float ver = Input.GetAxis("Vertical");
         
-        if (Input.GetKey(KeyCode.W))
-        {
-            newDirection.z = 1;
-        }
+
+        //if (Input.GetKey(KeyCode.W))
+        //{
+          //  newDirection = 1;
+        //}
 
         Vector3 _ = new Vector3();
         characterController.SimpleMove(_); // this part is needed because simpleMove adds gravity to character.
 
         //controls animation
-        if (newDirection.z != 0)
+        if (ver > 0) 
         {
-            direction = newDirection;
-            transform.rotation = Quaternion.LookRotation(direction);
+            //direction = newDirection;
+            //transform.rotation = Quaternion.LookRotation(direction);
             anim.SetBool("isWalking", true);
 
             if (Input.GetKey(KeyCode.LeftShift))
@@ -187,7 +191,11 @@ public class Controls : MonoBehaviour
             }
 
 
-            transform.position += transform.TransformDirection(newDirection * Time.deltaTime * currentSpeed);
+
+            Vector3 newDirection = new Vector3(hor, 0f, ver) * currentSpeed * Time.deltaTime;
+            transform.Translate(newDirection, Space.Self);
+
+            
             
         }
 
