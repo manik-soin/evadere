@@ -1431,6 +1431,7 @@ GameObject:
   - component: {fileID: 6037703539098071226}
   - component: {fileID: 6037703539098071224}
   - component: {fileID: 6037703539098071225}
+  - component: {fileID: -3166518393221586369}
   m_Layer: 0
   m_Name: Alien
   m_TagString: Untagged
@@ -1447,7 +1448,7 @@ Transform:
   m_GameObject: {fileID: 6848658578492254023}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.36603022, y: 0, z: 4.2647004}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children:
   - {fileID: 1035926897517839838}
   - {fileID: 1734115452059671913}
@@ -1526,7 +1527,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1538,6 +1539,20 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-3166518393221586369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6848658578492254023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fba6c71407fcbad4d8b7f7b8ac92c57c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
+  Player: {fileID: 0}
 --- !u!1 &6997287830773348993
 GameObject:
   m_ObjectHideFlags: 0
