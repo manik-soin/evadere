@@ -21,8 +21,17 @@ public class EN : MonoBehaviour
     void Update()
     {
         currentEN = Controls.cellsCollected;
-        enText.text = "Energy : " + currentEN*20 + "%";
-        
+        if (Controls.cellsCollected == Controls.requiredCells)
+        {
+            enText.text = "Return back to ship!";
+
+        }
+        else
+        {
+            enText.text = "Energy : " + currentEN * 20 + "%";
+        }
+           
+            
         enBar.SetEN(currentEN);
         
     }
