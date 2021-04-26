@@ -12,6 +12,7 @@ TagManager:
   - Spaceship
   - Healthpack
   - Alien
+  - minimap-sphere
   layers:
   - Default
   - TransparentFX
