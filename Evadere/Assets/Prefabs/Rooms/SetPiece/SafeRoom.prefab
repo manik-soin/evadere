@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678c6caf4133685e3b6f048f07a7c4b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  centre: {fileID: 2447169747729232009, guid: 467568d97654f23aa987e5d09ab47067, type: 3}
+  centre: {fileID: 165310, guid: 4cdcc6c16809ba5439c8798d9bb925f4, type: 3}
   enemy: {fileID: 6848658578492254023, guid: cba219b27f3096646b0cbbe05e8bc211, type: 3}
   spawnPoints:
   - {fileID: 6794623961645594222}
