@@ -1515,7 +1515,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 6037703539098071225}
-  Player: {fileID: 6109064465283623753, guid: e530c27b92d2b0c43b2a339e0f36cc83, type: 3}
+  attackRange: 200
+  attack: 0
 --- !u!195 &6037703539098071225
 NavMeshAgent:
   m_ObjectHideFlags: 0
