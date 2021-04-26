@@ -78,6 +78,11 @@ public class Controls : MonoBehaviour
                 text.text = "Health is full!";
             }
         }
+        else if (other.gameObject.tag == "Alien")
+        {
+            currentHealth -= 20;
+            print("Oh no! you are hit!");
+        }
     }
 
 

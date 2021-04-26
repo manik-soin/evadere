@@ -9,6 +9,9 @@ TagManager:
   - Item
   - Walls
   - Ground
+  - Spaceship
+  - Healthpack
+  - Alien
   layers:
   - Default
   - TransparentFX
