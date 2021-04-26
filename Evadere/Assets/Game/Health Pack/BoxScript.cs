@@ -32,7 +32,9 @@ public class BoxScript : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        text.text = "";
+        if (text) {
+            text.text = "";
+        }
     }
 
 

@@ -80,7 +80,7 @@ public class Controls : MonoBehaviour
         }
         else if (other.gameObject.tag == "Alien")
         {
-            currentHealth -= 20;
+            currentHealth -= 0;
             print("Oh no! you are hit!");
         }
     }

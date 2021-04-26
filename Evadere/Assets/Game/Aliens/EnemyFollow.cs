@@ -59,23 +59,32 @@ public class EnemyFollow : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Player"){
-            anim.SetTrigger("isAttacking");
-            anim.SetBool("isCrawling",true);
+            // anim.SetTrigger("isAttacking");
+            anim.SetBool("isCrawling",false);
+            // Debug.Log(anim.GetCurrentAnimatorStateInfo(0).IsName("ZombieAttack"));
+            // Controls.currentHealth -= 1;
         }
     }
 
     private void OnTriggerStay(Collider other) {
         if (other.gameObject.tag == "Player"){
             anim.SetTrigger("isAttacking");
-            anim.SetBool("isCrawling",true);
+            // anim.SetBool("isCrawling",true);
+            // while (anim.GetCurrentAnimatorStateInfo(0).IsName("Zombie Attack")) { }
+            // Controls.currentHealth -= 1;
         }
     }
 
     private void OnTriggerExit(Collider other) {
         if (other.gameObject.tag == "Player"){
-            anim.SetTrigger("isAttacking");
+            // anim.SetTrigger("isAttacking");
             anim.SetBool("isCrawling",true);
         }
+    }
+
+    public void Attack() {
+        Debug.Log("attacked!");
+        Controls.currentHealth -= 20;
     }
 
 }
