@@ -8,16 +8,24 @@ public class PauseMenu : MonoBehaviour
     public static bool paused = false;
     public GameObject pauseMenuUI;
 
+    public GameObject cameraControls;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (paused)
             {
+                
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
                 Resume();
+                
             }
             else
             {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
                 Pause();
             }
         }
@@ -38,6 +46,7 @@ public class PauseMenu : MonoBehaviour
     public void goMenu()
     {
         Time.timeScale = 1f;
+        Debug.Log("Going back to menu");
         SceneManager.LoadScene("Menu");
     }
     public void quitGame()

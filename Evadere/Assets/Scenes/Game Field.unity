@@ -15145,6 +15145,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8243861518081363602, guid: c00452e619148c4448bc1785b967d558, type: 3}
+      propertyPath: cameraControls
+      value: 
+      objectReference: {fileID: 1116581021}
     - target: {fileID: 8243861518081363609, guid: c00452e619148c4448bc1785b967d558, type: 3}
       propertyPath: m_Name
       value: PauseCanvas
