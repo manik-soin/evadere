@@ -9,13 +9,12 @@ using UnityEngine.UI;
 public class Controls : MonoBehaviour
 {
 
-    public static int currentHealth = 100;
+    public static int currentHealth = 50;
     public static int cellsCollected = 0;
     public float rotationSpeed = 100.0F;
     public float walkingSpeed = 2.0f;
     public float runningSpeed = 7.0f;
     public float acceleration = 0.2f;
-    public int addHealth = 20;
     public static int requiredCells = 5;
     public Text text;
 
@@ -42,6 +41,7 @@ public class Controls : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
+        text.text = "";
     }
 
 
@@ -66,12 +66,17 @@ public class Controls : MonoBehaviour
                 spaceship = other.gameObject;
                 text.text = "Press E to enter Spaceship";
             }
+            else
+            {
+                text.text = "Not sufficient energy....";
+            }
         }
         else if (other.gameObject.tag == "Healthpack")
         {
-            Debug.Log("HealthPack Detected!");
-            Destroy(other);
-            currentHealth += addHealth;
+            if (currentHealth == 100)
+            {
+                text.text = "Health is full!";
+            }
         }
     }
 

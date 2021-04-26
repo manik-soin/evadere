@@ -12,17 +12,14 @@ public class HealthScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
         healthBar.SetMaxHealth(maxHealth);
-        Debug.Log("Hello!");
     }
 
     // Update is called once per frame
     void Update()
     {
-
         healthText.text = "HP : " + Controls.currentHealth;
         healthBar.SetHealth(Controls.currentHealth);
-       
     }
 }
