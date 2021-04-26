@@ -1718,14 +1718,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6884897098941166067}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c64e773524d1114991a200818bcf52d, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ae660394b421084687b900b9119d1b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 100
-  walkingSpeed: 24
-  runningSpeed: 48
-  acceleration: 4
-  addHealth: 20
+  walkingSpeed: 2
+  runningSpeed: 7
+  acceleration: 0.2
   text: {fileID: 0}
 --- !u!82 &-41390832795549982
 AudioSource:
