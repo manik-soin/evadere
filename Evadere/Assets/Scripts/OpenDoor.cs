@@ -33,14 +33,17 @@ public class OpenDoor : MonoBehaviour
 
         if (direction == OpenDirection.x)
         {
+            
             doorBody.localPosition = new Vector3(Mathf.Lerp(doorBody.localPosition.x, defaultDoorPosition.x + (open ? openDistance : 0), Time.deltaTime * openSpeed), doorBody.localPosition.y, doorBody.localPosition.z);
         }
         else if (direction == OpenDirection.y)
         {
+            
             doorBody.localPosition = new Vector3(doorBody.localPosition.x, Mathf.Lerp(doorBody.localPosition.y, defaultDoorPosition.y + (open ? openDistance : 0), Time.deltaTime * openSpeed), doorBody.localPosition.z);
         }
         else if (direction == OpenDirection.z)
         {
+           
             doorBody.localPosition = new Vector3(doorBody.localPosition.x, doorBody.localPosition.y, Mathf.Lerp(doorBody.localPosition.z, defaultDoorPosition.z + (open ? openDistance : 0), Time.deltaTime * openSpeed));
         }
     }
@@ -51,8 +54,12 @@ public class OpenDoor : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             print("Player entered zone");
+            if (open == false)
+            {
+                source.PlayOneShot(doorSound);
+            }
             open = true;
-            source.PlayOneShot(doorSound);
+            
 
 
         }
