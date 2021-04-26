@@ -9,6 +9,9 @@ TagManager:
   - Item
   - Walls
   - Ground
+  - Spaceship
+  - Healthpack
+  - minimap-sphere
   layers:
   - Default
   - TransparentFX
