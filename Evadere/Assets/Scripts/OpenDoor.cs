@@ -10,6 +10,8 @@ public class OpenDoor : MonoBehaviour
     public float openDistance = 3.5f; //How far should door slide (change direction by entering either a positive or a negative value)
     public float openSpeed = 2.0f; //Increasing this value will make the door open faster
     public Transform doorBody; //Door body Transform
+    public AudioSource source;
+    public AudioClip doorSound;
 
     bool open = false;
 
@@ -50,6 +52,8 @@ public class OpenDoor : MonoBehaviour
         {
             print("Player entered zone");
             open = true;
+            source.PlayOneShot(doorSound);
+
 
         }
     }
