@@ -5,6 +5,7 @@
  */
 
 using UnityEngine;
+using UnityEngine.UI;
 public class Controls : MonoBehaviour
 {
 
@@ -16,7 +17,7 @@ public class Controls : MonoBehaviour
     public float acceleration = 0.2f;
     public int addHealth = 20;
     public static int requiredCells = 5;
-
+    public Text text;
 
 
     private Animator anim;
@@ -53,6 +54,8 @@ public class Controls : MonoBehaviour
             Debug.Log("Item Detected");
             canPickUp = true;
             objectToPickUp = other.gameObject.transform.parent.gameObject;
+            text.text = "Press E to pick up Energy Cell";
+
         }
         else if  (other.gameObject.tag == "Spaceship")
         {
@@ -61,6 +64,7 @@ public class Controls : MonoBehaviour
             {
                 canEnterSpaceship = true;
                 spaceship = other.gameObject;
+                text.text = "Press E to enter Spaceship";
             }
         }
         else if (other.gameObject.tag == "Healthpack")
@@ -90,6 +94,8 @@ public class Controls : MonoBehaviour
             Debug.Log("Exit Space Ship Enter Area");
             
         }
+
+        text.text = "";
     }
         
 
@@ -123,6 +129,7 @@ public class Controls : MonoBehaviour
                 cellsCollected++; //and then cells collected will be incremented
                 canPickUp = false;
                 objectToPickUp = null;
+                text.text = "";
 
                 //for debugging purposes
                 Debug.Log("Picked Up!");
