@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 
 public class vol_script3 : MonoBehaviour
 {
-    public AudioSource AudioSource;
+    public AudioSource AudioSource = null;
     public static readonly string global_vol = "global_vol";
 
     private float Globalvol = 0;

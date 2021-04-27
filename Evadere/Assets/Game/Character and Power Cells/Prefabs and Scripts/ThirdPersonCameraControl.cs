@@ -53,6 +53,7 @@ public class ThirdPersonCameraControl : MonoBehaviour
 
         if (Physics.Raycast(transform.position, Target.position - transform.position, out hit, 45f))
         {
+
             if (hit.collider.gameObject.tag != "Alien" || hit.collider.gameObject.tag != "item")
             {
                 if (objec != hit.collider.gameObject)
@@ -70,7 +71,6 @@ public class ThirdPersonCameraControl : MonoBehaviour
             }
             else
             {
-                print("No");
                 if (objec != null)
                 {
                     objec.GetComponent<Renderer>().material = oldMaterial;//Reset targets material
