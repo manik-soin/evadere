@@ -35,9 +35,6 @@ public class Controls : MonoBehaviour
     private byte b = 255;
     private bool flashingIn = true;
     
-    
-
-
     void Start()
     {
         anim = GetComponent<Animator>();

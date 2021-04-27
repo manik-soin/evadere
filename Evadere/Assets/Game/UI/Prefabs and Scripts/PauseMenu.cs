@@ -3,24 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class PauseMenu : MonoBehaviour
 {
     public static bool paused = false;
     public GameObject pauseMenuUI;
 
     public GameObject cameraControls;
+    public int currentSceneIndex = 0;
 
+    void Awake()
+    {
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (paused)
             {
-                
+
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
                 Resume();
-                
+
             }
             else
             {
@@ -47,7 +53,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         Debug.Log("Going back to menu");
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene(currentSceneIndex - 2);
     }
     public void quitGame()
     {
