@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Start Menu/Start Screen.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Narration Screen/Narration Scene.unity
     guid: 2740d6e8fbaf211489995dff3d9c3287
   - enabled: 1

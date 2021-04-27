@@ -62,11 +62,13 @@ public class ThirdPersonCameraControl : MonoBehaviour
                         objec.GetComponent<Renderer>().material = oldMaterial;
                     }
                 }
+                if(hit.collider.gameObject.GetComponent<Renderer>())
+                {
+                    hit.collider.gameObject.GetComponent<Renderer>().material = Transparent;
 
-                hit.collider.gameObject.GetComponent<Renderer>().material = Transparent;
-
-                objec = hit.collider.gameObject;
-                objec.GetComponent<Renderer>().material = Transparent;
+                    objec = hit.collider.gameObject;
+                    objec.GetComponent<Renderer>().material = Transparent;
+                }
             }
             else
             {
