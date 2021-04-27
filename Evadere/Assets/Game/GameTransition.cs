@@ -6,23 +6,27 @@ using UnityEngine.SceneManagement;
 public class GameTransition : MonoBehaviour
 {
 
-    public static int health = 0;
-    public string nextScene;
-    public int delay;
+    public bool finishLevel = false;
+    public bool isDead = false;
+    public string credits;
+    public string death;
 
     // Update is called once per frame
     void Update()
     {
-        if (health <= 0)
+        if (finishLevel == true)
         {
-            ChangeToScene(nextScene);
+            StartCoroutine(DoChangeScene(credits, 0.3f));
+        } 
+        else if (isDead)
+        {
+            
+            StartCoroutine(DoChangeScene(death, 3.5f));
+
         }
     }
 
-    public void ChangeToScene(string sceneToChangeTo)
-    {
-        StartCoroutine(DoChangeScene(sceneToChangeTo, delay));
-    }
+   
     IEnumerator DoChangeScene(string sceneToChangeTo, float delay)
     {
         yield return new WaitForSeconds(delay);

@@ -17,6 +17,7 @@ public class Controls : MonoBehaviour
     public float acceleration = 0.2f;
     public static int requiredCells = 5;
     public Text text;
+    public GameTransition gameTransition;
 
 
     private Animator anim;
@@ -33,7 +34,7 @@ public class Controls : MonoBehaviour
     private byte g = 255;
     private byte b = 255;
     private bool flashingIn = true;
-    private Vector3 direction = new Vector3();
+    
     
 
 
@@ -42,6 +43,7 @@ public class Controls : MonoBehaviour
         anim = GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
         text.text = "";
+        Controls.currentHealth = 50;
     }
 
 
@@ -118,6 +120,7 @@ public class Controls : MonoBehaviour
         if (currentHealth <= 0)
         {
             anim.SetTrigger("isDead");
+            gameTransition.isDead = true;
             return true;
         }
         return false;
@@ -154,8 +157,7 @@ public class Controls : MonoBehaviour
     {
         if (Input.GetKeyDown("e"))
         {
-            Destroy(gameObject);
-            //GameTransition.finishLevel = true;
+            gameTransition.finishLevel = true;
         }
     }
 

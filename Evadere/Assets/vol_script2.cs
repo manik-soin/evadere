@@ -8,7 +8,7 @@ public class vol_script2 : MonoBehaviour
     public AudioSource AudioSource;
     public static readonly string global_vol = "global_vol";
 
-    private float Globalvol = 0;
+    private float Globalvol = 50;
 
     void Awake()
     {
