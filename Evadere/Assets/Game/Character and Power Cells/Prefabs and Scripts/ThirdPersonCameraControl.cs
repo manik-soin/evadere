@@ -51,7 +51,7 @@ public class ThirdPersonCameraControl : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, Target.position - transform.position, out hit, 45f))
+        if (Physics.Raycast(transform.position, Target.position - transform.position, out hit, 64f))
         {
 
             if (hit.collider.gameObject.tag != "Alien" || hit.collider.gameObject.tag != "item")
@@ -60,22 +60,22 @@ public class ThirdPersonCameraControl : MonoBehaviour
                 {
                     if (objec != null)
                     {
-                        objec.GetComponent<Renderer>().material = oldMaterial;
+                        objec.GetComponent<MeshRenderer>().material = oldMaterial;
                     }
                 }
 
-                hit.collider.gameObject.GetComponent<Renderer>().material = Transparent;
+                hit.collider.gameObject.GetComponent<MeshRenderer>().material = Transparent;
 
                 objec = hit.collider.gameObject;
-                objec.GetComponent<Renderer>().material = Transparent;
+                objec.GetComponent<MeshRenderer>().material = Transparent;
             }
-            else
+        }
+        else
+        {
+            if (objec != null)
             {
-                if (objec != null)
-                {
-                    objec.GetComponent<Renderer>().material = oldMaterial;//Reset targets material
-                    objec = null;//Clear reference
-                }
+                objec.GetComponent<MeshRenderer>().material = oldMaterial;//Reset targets material
+                objec = null;//Clear reference
             }
         }
     }
