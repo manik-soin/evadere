@@ -10,6 +10,7 @@ public class ThirdPersonCameraControl : MonoBehaviour
 
     public Transform Obstruction;
     float zoomSpeed = 2f;
+    public new Material Transparent;
     
     void Start()
     {
@@ -43,31 +44,38 @@ public class ThirdPersonCameraControl : MonoBehaviour
             Player.rotation = Quaternion.Euler(0, mouseX, 0);
         }
     }
-    
+    public GameObject objec;
+    public Material oldMaterial;
 
     void ViewObstructed()
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, Target.position - transform.position, out hit, 4.5f))
+        if (Physics.Raycast(transform.position, Target.position - transform.position, out hit, 45f))
         {
-            if (hit.collider.gameObject.tag != "Player")
+            if (hit.collider.gameObject.tag != "Alien" || hit.collider.gameObject.tag != "item")
             {
-                Obstruction = hit.transform;
-                if (Obstruction.gameObject.GetComponent<MeshRenderer>()){
-                    Obstruction.gameObject.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
+                if (objec != hit.collider.gameObject)
+                {
+                    if (objec != null)
+                    {
+                        objec.GetComponent<Renderer>().material = oldMaterial;
+                    }
                 }
-                
-                if(Vector3.Distance(Obstruction.position, transform.position) >= 3f && Vector3.Distance(transform.position, Target.position) >= 1.5f)
-                    transform.Translate(Vector3.forward * zoomSpeed * Time.deltaTime);
+
+                hit.collider.gameObject.GetComponent<Renderer>().material = Transparent;
+
+                objec = hit.collider.gameObject;
+                objec.GetComponent<Renderer>().material = Transparent;
             }
             else
             {
-                if (Obstruction.gameObject.GetComponent<MeshRenderer>()){
-                    Obstruction.gameObject.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+                print("No");
+                if (objec != null)
+                {
+                    objec.GetComponent<Renderer>().material = oldMaterial;//Reset targets material
+                    objec = null;//Clear reference
                 }
-                if (Vector3.Distance(transform.position, Target.position) < 4.5f)
-                    transform.Translate(Vector3.back * zoomSpeed * Time.deltaTime);
             }
         }
     }
