@@ -15,7 +15,7 @@ public class Controls : MonoBehaviour
     public float walkingSpeed = 2.0f;
     public float runningSpeed = 7.0f;
     public float acceleration = 0.2f;
-    public static int requiredCells = 5;
+    public static int requiredCells = 1;
     public Text text;
     public GameTransition gameTransition;
 
@@ -37,6 +37,7 @@ public class Controls : MonoBehaviour
     
     void Start()
     {
+        GameObject.FindGameObjectsWithTag("arrow")[0].GetComponent<MeshRenderer>().enabled = false;
         anim = GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
         text.text = "";
@@ -54,7 +55,6 @@ public class Controls : MonoBehaviour
             canPickUp = true;
             objectToPickUp = other.gameObject.transform.parent.gameObject;
             text.text = "Press E to pick up Energy Cell";
-
         }
         else if  (other.gameObject.tag == "Spaceship")
         {
@@ -262,6 +262,10 @@ public class Controls : MonoBehaviour
     void Update()
     {
         //computing movement
+        if (cellsCollected == requiredCells)
+        {
+            GameObject.FindGameObjectsWithTag("arrow")[0].GetComponent<MeshRenderer>().enabled = true;
+        }
 
         if (!CheckIfDead())
         {
