@@ -13,6 +13,7 @@ TagManager:
   - Healthpack
   - Alien
   - minimap-sphere
+  - arrow
   layers:
   - Default
   - TransparentFX
