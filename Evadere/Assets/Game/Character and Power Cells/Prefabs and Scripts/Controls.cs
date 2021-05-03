@@ -34,7 +34,7 @@ public class Controls : MonoBehaviour
     private byte g = 255;
     private byte b = 255;
     private bool flashingIn = true;
-    
+
     void Start()
     {
         GameObject.FindGameObjectsWithTag("arrow")[0].GetComponent<MeshRenderer>().enabled = false;
@@ -120,6 +120,12 @@ public class Controls : MonoBehaviour
             gameTransition.isDead = true;
             return true;
         }
+
+        else if (gameObject.transform.position.y < -400)
+        {
+            gameTransition.isDead = true;
+            return true;
+        }
         return false;
     }
 
@@ -162,6 +168,8 @@ public class Controls : MonoBehaviour
     // it uses transform to perform rotation
     void Movement()
     {
+
+        characterController.Move(new Vector3(0f, -80f, 0) * Time.deltaTime); // this part is needed to add gravity to character.
         //if the character is currently picking up items, then movement is disabled
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("picking"))
         {
@@ -183,8 +191,8 @@ public class Controls : MonoBehaviour
           //  newDirection = 1;
         //}
 
-        Vector3 _ = new Vector3();
-        characterController.SimpleMove(_); // this part is needed because simpleMove adds gravity to character.
+       
+        
 
         //controls animation
         if (ver > 0) 

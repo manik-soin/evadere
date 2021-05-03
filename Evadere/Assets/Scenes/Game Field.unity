@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.29417786, g: 0.3019626, b: 0.32625046, a: 1}
+  m_IndirectSpecularColor: {r: 0.23315534, g: 0.23638168, b: 0.27299175, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13181,6 +13181,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 981462521502295315, guid: e530c27b92d2b0c43b2a339e0f36cc83, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 981462521502295315, guid: e530c27b92d2b0c43b2a339e0f36cc83, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 981462521502295315, guid: e530c27b92d2b0c43b2a339e0f36cc83, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6002586638791642982, guid: e530c27b92d2b0c43b2a339e0f36cc83, type: 3}
       propertyPath: text
       value: 
@@ -13227,7 +13239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6109064465283623753, guid: e530c27b92d2b0c43b2a339e0f36cc83, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6109064465283623753, guid: e530c27b92d2b0c43b2a339e0f36cc83, type: 3}
       propertyPath: m_LocalRotation.w
@@ -24616,6 +24628,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 700593329}
     m_Modifications:
+    - target: {fileID: 536964735528688425, guid: 3ac7bbe19f0adc8498cb52b88ac1d16f, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 536964735528688425, guid: 3ac7bbe19f0adc8498cb52b88ac1d16f, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 536964735528688425, guid: 3ac7bbe19f0adc8498cb52b88ac1d16f, type: 3}
+      propertyPath: m_FontData.m_LineSpacing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 536964735528688425, guid: 3ac7bbe19f0adc8498cb52b88ac1d16f, type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 536964735528688425, guid: 3ac7bbe19f0adc8498cb52b88ac1d16f, type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 536964735528688426, guid: 3ac7bbe19f0adc8498cb52b88ac1d16f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
