@@ -5240,6 +5240,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gen_Floor_01_snaps002
       objectReference: {fileID: 0}
+    - target: {fileID: 1418603965074362, guid: 7de2f47ecbafa1a429e13c54d20d7bdb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4934334823918846, guid: 7de2f47ecbafa1a429e13c54d20d7bdb, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -7205,6 +7209,10 @@ PrefabInstance:
     - target: {fileID: 2658867220780486499, guid: 6c05ba0988ae15e27baf66eb5387a203, type: 3}
       propertyPath: m_Name
       value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 2658867220780486499, guid: 6c05ba0988ae15e27baf66eb5387a203, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5900974633214530296, guid: 6c05ba0988ae15e27baf66eb5387a203, type: 3}
       propertyPath: direction
