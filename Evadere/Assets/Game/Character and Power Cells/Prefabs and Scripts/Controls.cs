@@ -161,6 +161,7 @@ public class Controls : MonoBehaviour
         if (Input.GetKeyDown("e"))
         {
             gameTransition.finishLevel = true;
+            cellsCollected = 0;
         }
     }
 
@@ -169,7 +170,7 @@ public class Controls : MonoBehaviour
     void Movement()
     {
 
-        characterController.Move(new Vector3(0f, -80f, 0) * Time.deltaTime); // this part is needed to add gravity to character.
+        characterController.Move(new Vector3(0f, -200f, 0) * Time.deltaTime); // this part is needed to add gravity to character.
         //if the character is currently picking up items, then movement is disabled
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("picking"))
         {

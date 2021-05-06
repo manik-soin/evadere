@@ -17233,9 +17233,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 100
-  walkingSpeed: 150
-  runningSpeed: 400
-  acceleration: 50
+  walkingSpeed: 80
+  runningSpeed: 270
+  acceleration: 15
   text: {fileID: 1878994478}
   gameTransition: {fileID: 1431799149}
 --- !u!54 &1431799157
