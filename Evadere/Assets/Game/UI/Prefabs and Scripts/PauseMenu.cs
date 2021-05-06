@@ -53,7 +53,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         Debug.Log("Going back to menu");
-        SceneManager.LoadScene(currentSceneIndex - 2);
+        SceneManager.LoadScene(currentSceneIndex - 3);
     }
     public void quitGame()
     {
