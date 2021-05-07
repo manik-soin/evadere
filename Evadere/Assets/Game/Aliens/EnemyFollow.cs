@@ -84,7 +84,14 @@ public class EnemyFollow : MonoBehaviour
 
     public void Attack() {
         Debug.Log("attacked!");
-        Controls.currentHealth -= 20;
+        if (Controls.currentHealth < 20)
+        {
+            Controls.currentHealth = 0;
+        }
+        else
+        {
+            Controls.currentHealth -= Random.Range(13, 20);
+        }
     }
 
 }

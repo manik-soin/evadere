@@ -17233,8 +17233,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 100
-  walkingSpeed: 150
-  runningSpeed: 400
+  walkingSpeed: 90
+  runningSpeed: 350
   acceleration: 50
   text: {fileID: 1878994478}
   gameTransition: {fileID: 1431799149}
