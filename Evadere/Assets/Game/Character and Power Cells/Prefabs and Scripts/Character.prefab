@@ -1643,11 +1643,11 @@ GameObject:
   - component: {fileID: 6109064465283623753}
   - component: {fileID: 6002586638791642980}
   - component: {fileID: 6002586638791642983}
-  - component: {fileID: 6002586638791642982}
   - component: {fileID: -41390832795549982}
   - component: {fileID: 1188479689175447941}
   - component: {fileID: 4345991511897090756}
   - component: {fileID: -7354022951281597696}
+  - component: {fileID: 2087995311469078130}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -1709,24 +1709,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6002586638791642982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6884897098941166067}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ae660394b421084687b900b9119d1b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 100
-  walkingSpeed: 2
-  runningSpeed: 7
-  acceleration: 0.2
-  text: {fileID: 0}
-  gameTransition: {fileID: 0}
 --- !u!82 &-41390832795549982
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1946,6 +1928,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2087995311469078130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6884897098941166067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae660394b421084687b900b9119d1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 100
+  walkingSpeed: 90
+  runningSpeed: 350
+  acceleration: 50
+  text: {fileID: 0}
+  gameTransition: {fileID: 0}
 --- !u!1 &6973727910007021999
 GameObject:
   m_ObjectHideFlags: 0

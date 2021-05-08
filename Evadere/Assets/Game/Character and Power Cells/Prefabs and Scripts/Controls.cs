@@ -26,7 +26,6 @@ public class Controls : MonoBehaviour
     private float currentSpeed = 0;   
     private GameObject objectToPickUp;
     private GameObject spaceship;
-
     private bool canEnterSpaceship = false; 
 
 
@@ -34,7 +33,7 @@ public class Controls : MonoBehaviour
     private byte g = 255;
     private byte b = 255;
     private bool flashingIn = true;
-
+    private bool finalStage = false;
     void Start()
     {
         GameObject.FindGameObjectsWithTag("arrow")[0].GetComponent<MeshRenderer>().enabled = false;
@@ -273,7 +272,14 @@ public class Controls : MonoBehaviour
         //computing movement
         if (cellsCollected == requiredCells)
         {
-            GameObject.FindGameObjectsWithTag("arrow")[0].GetComponent<MeshRenderer>().enabled = true;
+            if (finalStage == false){
+                GameObject.FindGameObjectsWithTag("arrow")[0].GetComponent<MeshRenderer>().enabled = true;
+                var aliens = GameObject.FindGameObjectsWithTag("Alien");
+                foreach (GameObject alien in aliens) {
+                    alien.GetComponent<EnemyFollow>().TriggerAttack();
+                }
+                finalStage = true;
+            }
         }
 
         if (!CheckIfDead())

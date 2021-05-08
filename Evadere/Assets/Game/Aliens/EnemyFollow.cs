@@ -14,6 +14,8 @@ public class EnemyFollow : MonoBehaviour
     public bool attack;
     private float timer;
     private Animator anim;
+    public AudioSource source;
+    public AudioClip screechSound;
 
     private void Awake() {
         anim = GetComponent<Animator>();
@@ -31,21 +33,29 @@ public class EnemyFollow : MonoBehaviour
         timer += Time.deltaTime;
         float distance = Vector3.Distance(Player.transform.position, transform.position);
         // print("Player's Position according to Aliens: "+Player.transform.position);
-        if (distance <= attackRange)
+        if (attack == false && distance <= attackRange)
         {
             print("In attack range!!!");
-            attack = true;
+            TriggerAttack();
         }
         if (attack == true)
         {
             enemy.SetDestination(Player.transform.position);
         } else
         {
-            if (timer >= 5){
+            if (timer >= 10){
                 Roam();
                 timer = 0;
             }
         }
+    }
+
+    public void TriggerAttack()
+    {
+        Debug.Log("Switch to attack mode.");
+        attack = true;
+        // source.PlayOneShot(screechSound);
+        source.Play();
     }
 
     void Roam()
