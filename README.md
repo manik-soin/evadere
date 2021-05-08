@@ -1,5 +1,11 @@
 # COMP3329_group_project
 
+# GROUP 3
+
+# EVADERE
+- For the best game experience, please build the unity project before playing. 
+- Note that lighting may differ when playing in Unity game view versus built project. 
+
 ## Division of Labor
 
 | tasks              | PIC        |
@@ -11,11 +17,9 @@
 
 ## Relevant Docs
 
-* presentation slides [\[link\]][1]
-* draft [\[link\]][2]
+* Game Trailer [\[link\]][1]
   
 ---
 
-[1]:https://docs.google.com/presentation/d/1Kgk3DIstk8leo9sHDmjxCj0RqgiKXDD_oi-bo_FioAY/
+[1]: https://drive.google.com/file/d/1ODMbJEHjP13I-BSalKb4pLo-Cwizz92O/view?usp=sharing
 
-[2]:https://docs.google.com/document/d/1cdTU3ufEFFRrfucawTN1B7EBaeB0rf4c_OAAEZJRz7I/
