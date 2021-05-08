@@ -6,6 +6,14 @@ TagManager:
   tags:
   - SpawnPoint
   - Rooms
+  - Item
+  - Walls
+  - Ground
+  - Spaceship
+  - Healthpack
+  - Alien
+  - minimap-sphere
+  - arrow
   layers:
   - Default
   - TransparentFX
